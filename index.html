@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Toko Bunga - Pesan via WhatsApp</title>
-
+    <title>Yan's Florist Garut</title>
     <style>
-        /* Reset dasar */
+        /* --- RESET & VARIABEL --- */
         * {
             margin: 0;
             padding: 0;
@@ -14,221 +13,673 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-            background: #faf6f2;
-            color: #2d2a24;
-            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fef6f4;
+            color: #2d2d2d;
+            padding: 0 20px 30px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 30px 20px 20px;
+        :root {
+            --merah-utama: #b22222;
+            --merah-gelap: #7a1a1a;
+            --merah-muda: #fce4e4;
+            --putih: #ffffff;
+            --abu: #f0ecea;
         }
 
-        .header h1 {
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: #4a2c2c;
-            letter-spacing: 2px;
+        /* ========== NAVBAR ATAS ========== */
+        .navbar-top {
+            background: var(--merah-utama);
+            padding: 14px 0;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 16px rgba(178, 34, 34, 0.25);
+            margin-bottom: 30px;
         }
 
-        .header h1 span {
-            color: #c27a5a;
+        .navbar-top .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px 18px;
         }
 
-        .header p {
-            font-size: 1.1rem;
-            color: #6b5b4f;
-            margin-top: 8px;
-        }
-
-        .divider {
-            width: 80px;
-            height: 3px;
-            background: #c27a5a;
-            margin: 16px auto 0;
-            border-radius: 4px;
-        }
-
-        /* Grid produk */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 24px;
-            padding: 18px 18px 22px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            text-align: center;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
-        }
-
-        .product-card .emoji-bunga {
-            font-size: 4.2rem;
-            display: block;
-            margin: 8px 0 10px;
-        }
-
-        .product-card h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #3d2c1e;
-        }
-
-        .product-card .price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #b45f3a;
-            margin: 8px 0 14px;
-        }
-
-        .product-card .desc {
-            font-size: 0.95rem;
-            color: #5f4f40;
-            padding: 0 4px;
-            line-height: 1.4;
-            min-height: 44px;
-        }
-
-        /* Tombol WhatsApp */
-        .btn-wa {
-            display: inline-block;
-            background: #25D366;
+        .navbar-top a {
             color: white;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 12px 28px;
-            border-radius: 60px;
             text-decoration: none;
-            transition: background 0.2s;
-            margin-top: 12px;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.25s, opacity 0.25s;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
         }
 
-        .btn-wa:hover {
-            background: #1ebe5c;
-            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        .navbar-top a:hover {
+            border-bottom-color: #ffcccc;
+            opacity: 0.9;
         }
 
-        .btn-wa i {
+        .navbar-top .logo-small {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffd9d9;
             margin-right: 8px;
         }
 
-        /* Footer */
-        .footer {
+        .navbar-top .logo-small span {
+            font-weight: 300;
+            color: white;
+        }
+
+        /* ========== JUDUL HALAMAN ========== */
+        h1 {
             text-align: center;
-            padding: 30px 0 10px;
-            color: #8a7a6b;
-            border-top: 1px solid #e6ddd5;
+            font-size: 2.2rem;
+            color: var(--merah-utama);
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
+        }
+
+        /* ========== KATEGORI ========== */
+        .kategori-section {
+            margin-bottom: 50px;
+        }
+
+        .kategori-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 18px;
+            border-bottom: 3px solid var(--merah-utama);
+            padding-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .kategori-header h2 {
+            color: var(--merah-utama);
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .kategori-header .lihat-semua {
+            color: var(--merah-utama);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            background: var(--merah-muda);
+            padding: 6px 18px;
+            border-radius: 30px;
+        }
+
+        .kategori-header .lihat-semua:hover {
+            color: white;
+            background: var(--merah-utama);
+        }
+
+        /* ========== GRID GALERI 4 KOLOM ========== */
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .galeri-item {
+            background: var(--putih);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.25s;
+            border: 2px solid transparent;
+        }
+
+        .galeri-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 28px rgba(178, 34, 34, 0.15);
+            border-color: var(--merah-utama);
+        }
+
+        .galeri-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .galeri-item .nama-produk {
+            padding: 12px 14px 14px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--merah-gelap);
+            background: white;
+            letter-spacing: 0.3px;
+        }
+
+        /* ========== KEUNGGULAN (3 FITUR) ========== */
+        .keunggulan {
             margin-top: 20px;
+            padding: 40px 0;
+            background: var(--putih);
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        .footer small {
-            font-size: 0.9rem;
+        .keunggulan .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 2.2rem;
+        .keunggulan-item {
+            padding: 10px;
+        }
+
+        .keunggulan-item .icon {
+            font-size: 2.8rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .keunggulan-item h3 {
+            color: var(--merah-utama);
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .keunggulan-item p {
+            color: #555;
+            font-size: 0.98rem;
+            line-height: 1.5;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* ========== MODAL ========== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: white;
+            max-width: 650px;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: modalMasuk 0.3s ease;
+            position: relative;
+        }
+
+        @keyframes modalMasuk {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
             }
-            .product-grid {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-box img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .modal-box .modal-body {
+            padding: 25px 30px 30px;
+        }
+
+        .modal-box .modal-body h2 {
+            color: var(--merah-utama);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .modal-box .modal-body .modal-deskripsi {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .modal-box .modal-body .modal-harga {
+            font-weight: 700;
+            color: var(--merah-gelap);
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+        }
+
+        .modal-box .modal-body .btn-wa {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .modal-box .modal-body .btn-wa:hover {
+            background: #1ebc5a;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 2rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .galeri-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .navbar-top .container {
+                gap: 6px 14px;
+            }
+            .navbar-top a {
+                font-size: 0.85rem;
+            }
+            .keunggulan .container {
+                grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
             }
-            .btn-wa {
-                padding: 10px 24px;
-                font-size: 0.95rem;
+        }
+
+        @media (max-width: 700px) {
+            .galeri-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .galeri-item img {
+                height: 160px;
+            }
+            .navbar-top .container {
+                gap: 4px 10px;
+            }
+            .navbar-top a {
+                font-size: 0.78rem;
+                padding: 4px 2px;
+            }
+            .navbar-top .logo-small {
+                font-size: 1rem;
+                margin-right: 4px;
+            }
+            .keunggulan .container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .keunggulan-item p {
+                max-width: 100%;
+            }
+            .kategori-header h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .galeri-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .galeri-item img {
+                height: 130px;
+            }
+            .galeri-item .nama-produk {
+                font-size: 0.8rem;
+                padding: 8px 6px;
+            }
+            .modal-box .modal-body {
+                padding: 18px;
+            }
+            .modal-box .modal-body h2 {
+                font-size: 1.4rem;
+            }
+            .navbar-top a {
+                font-size: 0.65rem;
+            }
+            .navbar-top .logo-small {
+                font-size: 0.8rem;
+            }
+            .kategori-header .lihat-semua {
+                font-size: 0.8rem;
+                padding: 4px 12px;
             }
         }
     </style>
 </head>
-
 <body>
 
-<div class="container">
+    <!-- ========== NAVBAR ATAS ========== -->
+    <nav class="navbar-top">
+        <div class="container">
+            <span class="logo-small">🌹 Yan's <span>Florist</span></span>
+            <a href="#">HOME</a>
+            <a href="#">BUNGA MEJA GARUT</a>
+            <a href="#">BUNGA PAPAN GARUT</a>
+            <a href="#">HAND BOUQUET GARUT</a>
+            <a href="#">STANDING FLOWER GARUT</a>
+            <a href="#">DEKORASI MOBIL GARUT</a>
+            <a href="#">TOKO BUNGA BANDUNG</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </nav>
 
-    <!-- HEADER -->
-    <div class="header">
-        <h1>🌸 <span>Bunga</span> Nusantara</h1>
-        <p>Buket segar &amp; elegan untuk setiap momen</p>
-        <div class="divider"></div>
+    <!-- ========== KONTEN UTAMA ========== -->
+    <div class="container">
+
+        <h1>🌸 Galeri Karangan Bunga</h1>
+        <p class="subtitle">Klik gambar untuk melihat detail produk</p>
+
+        <!-- ========================================================= -->
+        <!-- KATEGORI 1: STANDING FLOWER GARUT -->
+        <!-- ========================================================= -->
+        <section class="kategori-section">
+            <div class="kategori-header">
+                <h2>🌺 STANDING FLOWER GARUT</h2>
+                <a href="#" class="lihat-semua">LIHAT SEMUA KARANGAN BUNGA STANDING FLOWER →</a>
+            </div>
+            <div class="galeri-grid">
+                <div class="galeri-item" data-nama="Standing Flower Elegant" data-deskripsi="Karangan bunga tegak elegan dengan kombinasi mawar putih dan lily. Cocok untuk acara pernikahan atau grand opening." data-harga="Rp 350.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Standing Flower Elegant">
+                    <div class="nama-produk">Standing Flower Elegant</div>
+                </div>
+                <div class="galeri-item" data-nama="Standing Flower Mawar" data-deskripsi="Rangkaian standing flower dengan mawar merah menyala. Tampilan mewah dan elegan." data-harga="Rp 400.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Standing Flower Mawar">
+                    <div class="nama-produk">Standing Flower Mawar</div>
+                </div>
+                <div class="galeri-item" data-nama="Standing Flower Minimalis" data-deskripsi="Desain minimalis dengan bunga putih dan hijau. Cocok untuk acara modern." data-harga="Rp 300.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Standing Flower Minimalis">
+                    <div class="nama-produk">Standing Flower Minimalis</div>
+                </div>
+                <div class="galeri-item" data-nama="Standing Flower Premium" data-deskripsi="Rangkaian premium dengan bunga impor dan desain eksklusif." data-harga="Rp 550.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Standing Flower Premium">
+                    <div class="nama-produk">Standing Flower Premium</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- KATEGORI 2: BUNGA PAPAN GARUT -->
+        <!-- ========================================================= -->
+        <section class="kategori-section">
+            <div class="kategori-header">
+                <h2>🪧 BUNGA PAPAN GARUT</h2>
+                <a href="#" class="lihat-semua">LIHAT SEMUA KARANGAN BUNGA PAPAN →</a>
+            </div>
+            <div class="galeri-grid">
+                <div class="galeri-item" data-nama="Papan Duka Cita" data-deskripsi="Karangan bunga papan untuk duka cita dengan rangkaian yang khidmat dan elegan." data-harga="Rp 250.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Papan Duka Cita">
+                    <div class="nama-produk">Papan Duka Cita</div>
+                </div>
+                <div class="galeri-item" data-nama="Papan Selamat" data-deskripsi="Karangan bunga papan untuk ucapan selamat, grand opening, dan wisuda." data-harga="Rp 275.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Papan Selamat">
+                    <div class="nama-produk">Papan Selamat</div>
+                </div>
+                <div class="galeri-item" data-nama="Papan Pernikahan" data-deskripsi="Karangan bunga papan untuk pernikahan dengan nuansa putih dan emas." data-harga="Rp 300.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Papan Pernikahan">
+                    <div class="nama-produk">Papan Pernikahan</div>
+                </div>
+                <div class="galeri-item" data-nama="Papan Custom" data-deskripsi="Karangan bunga papan dengan desain custom sesuai keinginan Anda." data-harga="Rp 350.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Papan Custom">
+                    <div class="nama-produk">Papan Custom</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- KATEGORI 3: HAND BOUQUET GARUT -->
+        <!-- ========================================================= -->
+        <section class="kategori-section">
+            <div class="kategori-header">
+                <h2>💐 HAND BOUQUET GARUT</h2>
+                <a href="#" class="lihat-semua">LIHAT SEMUA HAND BOUQUET →</a>
+            </div>
+            <div class="galeri-grid">
+                <div class="galeri-item" data-nama="Bouquet Mawar Putih" data-deskripsi="Buket tangan mawar putih elegan untuk pernikahan atau lamaran." data-harga="Rp 180.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Bouquet Mawar Putih">
+                    <div class="nama-produk">Bouquet Mawar Putih</div>
+                </div>
+                <div class="galeri-item" data-nama="Bouquet Mawar Merah" data-deskripsi="Buket tangan mawar merah romantis untuk hari spesial." data-harga="Rp 200.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Bouquet Mawar Merah">
+                    <div class="nama-produk">Bouquet Mawar Merah</div>
+                </div>
+                <div class="galeri-item" data-nama="Bouquet Mixed" data-deskripsi="Buket campuran berbagai bunga dengan warna ceria." data-harga="Rp 220.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Bouquet Mixed">
+                    <div class="nama-produk">Bouquet Mixed</div>
+                </div>
+                <div class="galeri-item" data-nama="Bouquet Premium" data-deskripsi="Buket tangan premium dengan bunga impor dan desain eksklusif." data-harga="Rp 350.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Bouquet Premium">
+                    <div class="nama-produk">Bouquet Premium</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- KATEGORI 4: DEKORASI MOBIL GARUT -->
+        <!-- ========================================================= -->
+        <section class="kategori-section">
+            <div class="kategori-header">
+                <h2>🚗 DEKORASI MOBIL GARUT</h2>
+                <a href="#" class="lihat-semua">LIHAT SEMUA DEKORASI MOBIL →</a>
+            </div>
+            <div class="galeri-grid">
+                <div class="galeri-item" data-nama="Dekorasi Mobil Simple" data-deskripsi="Hiasan mobil pengantin dengan pita dan bunga segar minimalis." data-harga="Rp 400.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Dekorasi Mobil Simple">
+                    <div class="nama-produk">Dekorasi Mobil Simple</div>
+                </div>
+                <div class="galeri-item" data-nama="Dekorasi Mobil Premium" data-deskripsi="Hiasan mobil dengan rangkaian bunga mewah dan pita satin." data-harga="Rp 600.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Dekorasi Mobil Premium">
+                    <div class="nama-produk">Dekorasi Mobil Premium</div>
+                </div>
+                <div class="galeri-item" data-nama="Dekorasi Mobil Classic" data-deskripsi="Hiasan mobil dengan gaya klasik menggunakan mawar putih." data-harga="Rp 500.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Dekorasi Mobil Classic">
+                    <div class="nama-produk">Dekorasi Mobil Classic</div>
+                </div>
+                <div class="galeri-item" data-nama="Dekorasi Mobil Custom" data-deskripsi="Dekorasi mobil sesuai tema dan keinginan Anda." data-harga="Rp 700.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Dekorasi Mobil Custom">
+                    <div class="nama-produk">Dekorasi Mobil Custom</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- KATEGORI 5: BUNGA MEJA GARUT -->
+        <!-- ========================================================= -->
+        <section class="kategori-section">
+            <div class="kategori-header">
+                <h2>🌸 BUNGA MEJA GARUT</h2>
+                <a href="#" class="lihat-semua">LIHAT SEMUA BUNGA MEJA →</a>
+            </div>
+            <div class="galeri-grid">
+                <div class="galeri-item" data-nama="Bunga Meja Minimalis" data-deskripsi="Rangkaian bunga meja sederhana dengan vas kaca." data-harga="Rp 120.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Bunga Meja Minimalis">
+                    <div class="nama-produk">Bunga Meja Minimalis</div>
+                </div>
+                <div class="galeri-item" data-nama="Bunga Meja Elegant" data-deskripsi="Rangkaian bunga meja dengan mawar dan lily." data-harga="Rp 180.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Bunga Meja Elegant">
+                    <div class="nama-produk">Bunga Meja Elegant</div>
+                </div>
+                <div class="galeri-item" data-nama="Bunga Meja Premium" data-deskripsi="Rangkaian bunga meja dengan vas keramik dan bunga impor." data-harga="Rp 250.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Bunga Meja Premium">
+                    <div class="nama-produk">Bunga Meja Premium</div>
+                </div>
+                <div class="galeri-item" data-nama="Bunga Meja Custom" data-deskripsi="Rangkaian bunga meja sesuai tema acara Anda." data-harga="Rp 200.000" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Bunga Meja Custom">
+                    <div class="nama-produk">Bunga Meja Custom</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- KATEGORI 6: TOKO BUNGA BANDUNG -->
+        <!-- ========================================================= -->
+        <section class="kategori-section">
+            <div class="kategori-header">
+                <h2>🏙️ TOKO BUNGA BANDUNG</h2>
+                <a href="#" class="lihat-semua">LIHAT SEMUA PRODUK UNTUK BANDUNG →</a>
+            </div>
+            <div class="galeri-grid">
+                <div class="galeri-item" data-nama="Kirim Bunga Bandung" data-deskripsi="Layanan pengiriman bunga ke seluruh wilayah Bandung." data-harga="Hubungi kami" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Kirim Bunga Bandung">
+                    <div class="nama-produk">Kirim Bunga Bandung</div>
+                </div>
+                <div class="galeri-item" data-nama="Bouquet Bandung" data-deskripsi="Hand bouquet untuk pengiriman ke Bandung." data-harga="Hubungi kami" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Bouquet Bandung">
+                    <div class="nama-produk">Bouquet Bandung</div>
+                </div>
+                <div class="galeri-item" data-nama="Standing Bandung" data-deskripsi="Standing flower untuk acara di Bandung." data-harga="Hubungi kami" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Standing Bandung">
+                    <div class="nama-produk">Standing Bandung</div>
+                </div>
+                <div class="galeri-item" data-nama="Dekorasi Bandung" data-deskripsi="Dekorasi bunga untuk acara di Bandung." data-harga="Hubungi kami" data-img="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png">
+                    <img src="https://raw.githubusercontent.com/tokobungagarutyansflorist/tokobungagarutyansflorist.github.io/refs/heads/main/HappyWedding1.png" alt="Dekorasi Bandung">
+                    <div class="nama-produk">Dekorasi Bandung</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- KEUNGGULAN (3 FITUR) -->
+        <!-- ========================================================= -->
+        <section class="keunggulan">
+            <div class="container">
+                <div class="keunggulan-item">
+                    <span class="icon">⚡</span>
+                    <h3>Proses Cepat</h3>
+                    <p>Pesanan diproses segera tanpa mengabaikan kualitas hasil akhir.</p>
+                </div>
+                <div class="keunggulan-item">
+                    <span class="icon">🔒</span>
+                    <h3>Pembayaran Aman</h3>
+                    <p>Transaksi dijamin aman dengan dukungan berbagai metode pembayaran.</p>
+                </div>
+                <div class="keunggulan-item">
+                    <span class="icon">🏷️</span>
+                    <h3>Penawaran Terbaik</h3>
+                    <p>Manfaatkan promo menarik dan bebas ongkir di banyak wilayah.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- ========== END CONTAINER ========== -->
+
+    <!-- ====== MODAL / POPUP ====== -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose">✕</button>
+            <img id="modalImg" src="" alt="Detail Produk">
+            <div class="modal-body">
+                <h2 id="modalNama">Nama Produk</h2>
+                <div class="modal-deskripsi" id="modalDeskripsi">Deskripsi produk akan muncul di sini.</div>
+                <div class="modal-harga" id="modalHarga">Hubungi kami untuk harga</div>
+                <a href="https://wa.me/6282315406946?text=Halo%20Yan's%20Florist%2C%20saya%20tertarik%20dengan%20produk%20ini" class="btn-wa" id="modalWa" target="_blank">
+                    📲 Pesan via WhatsApp
+                </a>
+            </div>
+        </div>
     </div>
 
-    <!-- DAFTAR PRODUK -->
-    <div class="product-grid">
+    <script>
+        // --- Ambil semua item galeri ---
+        const items = document.querySelectorAll('.galeri-item');
+        const modal = document.getElementById('modal');
+        const modalClose = document.getElementById('modalClose');
+        const modalImg = document.getElementById('modalImg');
+        const modalNama = document.getElementById('modalNama');
+        const modalDeskripsi = document.getElementById('modalDeskripsi');
+        const modalHarga = document.getElementById('modalHarga');
+        const modalWa = document.getElementById('modalWa');
 
-        <!-- Card 1 -->
-        <div class="product-card">
-            <span class="emoji-bunga">🌹</span>
-            <h3>Buket Merah</h3>
-            <div class="price">Rp 185.000</div>
-            <div class="desc">Mawar merah + baby breath, sempurna untuk romansa.</div>
-            <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pesan%20Buket%20Merah%20(Rp%20185.000)" 
-               class="btn-wa" target="_blank">
-               📱 Pesan via WA
-            </a>
-        </div>
+        // --- Saat item diklik ---
+        items.forEach(item => {
+            item.addEventListener('click', function() {
+                const nama = this.dataset.nama;
+                const deskripsi = this.dataset.deskripsi;
+                const harga = this.dataset.harga;
+                const imgSrc = this.dataset.img;
 
-        <!-- Card 2 -->
-        <div class="product-card">
-            <span class="emoji-bunga">🌻</span>
-            <h3>Buket Matahari</h3>
-            <div class="price">Rp 210.000</div>
-            <div class="desc">Bunga matahari cerah + daun eucalyptus, vibes ceria.</div>
-            <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pesan%20Buket%20Matahari%20(Rp%20210.000)" 
-               class="btn-wa" target="_blank">
-               📱 Pesan via WA
-            </a>
-        </div>
+                modalImg.src = imgSrc;
+                modalImg.alt = nama;
+                modalNama.textContent = nama;
+                modalDeskripsi.textContent = deskripsi;
+                modalHarga.textContent = harga;
 
-        <!-- Card 3 -->
-        <div class="product-card">
-            <span class="emoji-bunga">💐</span>
-            <h3>Buket Mixed</h3>
-            <div class="price">Rp 275.000</div>
-            <div class="desc">Kombinasi warna-warni: tulip, mawar, aster &amp; filler.</div>
-            <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pesan%20Buket%20Mixed%20(Rp%20275.000)" 
-               class="btn-wa" target="_blank">
-               📱 Pesan via WA
-            </a>
-        </div>
+                const waText = encodeURIComponent(`Halo Yan's Florist, saya tertarik dengan produk "${nama}". Mohon info lebih lanjut.`);
+                modalWa.href = `https://wa.me/6282315406946?text=${waText}`;
 
-        <!-- Card 4 -->
-        <div class="product-card">
-            <span class="emoji-bunga">🌺</span>
-            <h3>Box Floral</h3>
-            <div class="price">Rp 320.000</div>
-            <div class="desc">Bunga dalam kotak premium, tahan lama &amp; instagramable.</div>
-            <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pesan%20Box%20Floral%20(Rp%20320.000)" 
-               class="btn-wa" target="_blank">
-               📱 Pesan via WA
-            </a>
-        </div>
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
 
-    </div>
+        // --- Tutup modal ---
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
 
-    <!-- FOOTER -->
-    <div class="footer">
-        <small>🌿 Bunga Nusantara • Kirim ke seluruh Indonesia • Pesan langsung via WhatsApp</small><br/>
-        <small style="color:#b5a394;">&copy; 2026 • Toko Bunga</small>
-    </div>
-
-</div>
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
 
 </body>
 </html>
