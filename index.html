@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Toko Bunga - Pesan via WhatsApp</title>
+
+    <style>
+        /* Reset dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #faf6f2;
+            color: #2d2a24;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 30px 20px 20px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #4a2c2c;
+            letter-spacing: 2px;
+        }
+
+        .header h1 span {
+            color: #c27a5a;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #6b5b4f;
+            margin-top: 8px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: #c27a5a;
+            margin: 16px auto 0;
+            border-radius: 4px;
+        }
+
+        /* Grid produk */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            padding: 18px 18px 22px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+        }
+
+        .product-card .emoji-bunga {
+            font-size: 4.2rem;
+            display: block;
+            margin: 8px 0 10px;
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #3d2c1e;
+        }
+
+        .product-card .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #b45f3a;
+            margin: 8px 0 14px;
+        }
+
+        .product-card .desc {
+            font-size: 0.95rem;
+            color: #5f4f40;
+            padding: 0 4px;
+            line-height: 1.4;
+            min-height: 44px;
+        }
+
+        /* Tombol WhatsApp */
+        .btn-wa {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: background 0.2s;
+            margin-top: 12px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-wa:hover {
+            background: #1ebe5c;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-wa i {
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0 10px;
+            color: #8a7a6b;
+            border-top: 1px solid #e6ddd5;
+            margin-top: 20px;
+        }
+
+        .footer small {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            .product-grid {
+                gap: 20px;
+            }
+            .btn-wa {
+                padding: 10px 24px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🌸 <span>Bunga</span> Nusantara</h1>
+        <p>Buket segar &amp; elegan untuk setiap momen</p>
+        <div class="divider"></div>
+    </div>
+
+    <!-- DAFTAR PRODUK -->
+    <div class="product-grid">
+
+        <!-- Card 1 -->
+        <div class="product-card">
+            <span class="emoji-bunga">🌹</span>
+            <h3>Buket Merah</h3>
+            <div class="price">Rp 185.000</div>
+            <div class="desc">Mawar merah + baby breath, sempurna untuk romansa.</div>
+            <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pesan%20Buket%20Merah%20(Rp%20185.000)" 
+               class="btn-wa" target="_blank">
+               📱 Pesan via WA
+            </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+            <span class="emoji-bunga">🌻</span>
+            <h3>Buket Matahari</h3>
+            <div class="price">Rp 210.000</div>
+            <div class="desc">Bunga matahari cerah + daun eucalyptus, vibes ceria.</div>
+            <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pesan%20Buket%20Matahari%20(Rp%20210.000)" 
+               class="btn-wa" target="_blank">
+               📱 Pesan via WA
+            </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+            <span class="emoji-bunga">💐</span>
+            <h3>Buket Mixed</h3>
+            <div class="price">Rp 275.000</div>
+            <div class="desc">Kombinasi warna-warni: tulip, mawar, aster &amp; filler.</div>
+            <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pesan%20Buket%20Mixed%20(Rp%20275.000)" 
+               class="btn-wa" target="_blank">
+               📱 Pesan via WA
+            </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card">
+            <span class="emoji-bunga">🌺</span>
+            <h3>Box Floral</h3>
+            <div class="price">Rp 320.000</div>
+            <div class="desc">Bunga dalam kotak premium, tahan lama &amp; instagramable.</div>
+            <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20pesan%20Box%20Floral%20(Rp%20320.000)" 
+               class="btn-wa" target="_blank">
+               📱 Pesan via WA
+            </a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <small>🌿 Bunga Nusantara • Kirim ke seluruh Indonesia • Pesan langsung via WhatsApp</small><br/>
+        <small style="color:#b5a394;">&copy; 2026 • Toko Bunga</small>
+    </div>
+
+</div>
+
+</body>
+</html>
