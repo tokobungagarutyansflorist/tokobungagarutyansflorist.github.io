@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Yan's Florist Garut</title>
+
+    <!-- ====== FONT AWESOME ====== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
     <style>
         /* --- RESET & VARIABEL --- */
         * {
@@ -38,7 +42,7 @@
             padding: 14px 0;
             border-radius: 0 0 20px 20px;
             box-shadow: 0 4px 16px rgba(178, 34, 34, 0.25);
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
 
         .navbar-top .container {
@@ -76,6 +80,85 @@
         .navbar-top .logo-small span {
             font-weight: 300;
             color: white;
+        }
+
+        /* ========== SOCIAL MEDIA BAR (IKON FONT AWESOME) ========== */
+        .social-bar {
+            background: white;
+            padding: 8px 0;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            margin-bottom: 25px;
+            border: 1px solid #f0e6e0;
+        }
+
+        .social-bar .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 12px 20px;
+        }
+
+        .social-bar .label {
+            font-weight: 600;
+            color: var(--merah-gelap);
+            font-size: 0.9rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            color: white;
+            font-size: 1.4rem;
+            background: #eee;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon.wa { background: #25D366; }
+        .social-icon.ig { background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f); }
+        .social-icon.fb { background: #1877f2; }
+        .social-icon.tt { background: #000000; }
+
+        /* ========== TOMBOL WHATSAPP STICKY (FONT AWESOME) ========== */
+        .wa-sticky {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #25D366;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+            transition: transform 0.25s, box-shadow 0.25s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .wa-sticky:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55);
+        }
+
+        .wa-sticky i {
+            font-size: 1.6rem;
         }
 
         /* ========== JUDUL HALAMAN ========== */
@@ -171,7 +254,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* ========== KEUNGGULAN (3 FITUR) ========== */
+        /* ========== KEUNGGULAN ========== */
         .keunggulan {
             margin-top: 20px;
             padding: 40px 0;
@@ -284,6 +367,7 @@
             margin-bottom: 18px;
         }
 
+        /* ====== TOMBOL DI MODAL PAKAI FONT AWESOME ====== */
         .modal-box .modal-body .btn-wa {
             display: inline-block;
             background: #25D366;
@@ -293,6 +377,12 @@
             font-weight: 700;
             text-decoration: none;
             transition: background 0.2s;
+            font-size: 1rem;
+        }
+
+        .modal-box .modal-body .btn-wa i {
+            margin-right: 8px;
+            font-size: 1.2rem;
         }
 
         .modal-box .modal-body .btn-wa:hover {
@@ -337,6 +427,20 @@
                 grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
             }
+            .social-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 1.2rem;
+            }
+            .wa-sticky {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            .wa-sticky i {
+                font-size: 1.4rem;
+            }
         }
 
         @media (max-width: 700px) {
@@ -366,6 +470,24 @@
             }
             .kategori-header h2 {
                 font-size: 1.3rem;
+            }
+            .social-bar .label {
+                font-size: 0.8rem;
+            }
+            .social-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 1rem;
+            }
+            .wa-sticky {
+                padding: 10px 16px;
+                font-size: 0.8rem;
+                bottom: 16px;
+                right: 16px;
+                gap: 6px;
+            }
+            .wa-sticky i {
+                font-size: 1.2rem;
             }
         }
 
@@ -397,6 +519,25 @@
                 font-size: 0.8rem;
                 padding: 4px 12px;
             }
+            .social-bar .container {
+                gap: 8px 14px;
+            }
+            .social-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 0.85rem;
+            }
+            .wa-sticky {
+                padding: 8px 14px;
+                font-size: 0.75rem;
+                bottom: 12px;
+                right: 12px;
+                gap: 5px;
+                border-radius: 40px;
+            }
+            .wa-sticky i {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -416,6 +557,33 @@
             <a href="#">Contact Us</a>
         </div>
     </nav>
+
+    <!-- ========== SOCIAL MEDIA BAR (FONT AWESOME) ========== -->
+    <div class="social-bar">
+        <div class="container">
+            <span class="label">📱 Ikuti Kami:</span>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/6282315406946" target="_blank" class="social-icon wa" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/tokobungagarutyansflorist/" target="_blank" class="social-icon ig" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <!-- Facebook -->
+            <a href="#" target="_blank" class="social-icon fb" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <!-- TikTok -->
+            <a href="#" target="_blank" class="social-icon tt" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </div>
 
     <!-- ========== KONTEN UTAMA ========== -->
     <div class="container">
@@ -617,6 +785,15 @@
     </div>
     <!-- ========== END CONTAINER ========== -->
 
+    <!-- ====== TOMBOL WHATSAPP STICKY (FONT AWESOME) ====== -->
+    <a href="https://wa.me/6282315406946?text=Halo%20Yan's%20Florist%2C%20saya%20ingin%20pesan%20bunga"
+       class="wa-sticky"
+       target="_blank"
+       aria-label="Pesan sekarang via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>Pesan Sekarang</span>
+    </a>
+
     <!-- ====== MODAL / POPUP ====== -->
     <div class="modal-overlay" id="modal">
         <div class="modal-box">
@@ -626,8 +803,11 @@
                 <h2 id="modalNama">Nama Produk</h2>
                 <div class="modal-deskripsi" id="modalDeskripsi">Deskripsi produk akan muncul di sini.</div>
                 <div class="modal-harga" id="modalHarga">Hubungi kami untuk harga</div>
-                <a href="https://wa.me/6282315406946?text=Halo%20Yan's%20Florist%2C%20saya%20tertarik%20dengan%20produk%20ini" class="btn-wa" id="modalWa" target="_blank">
-                    📲 Pesan via WhatsApp
+                <a href="https://wa.me/6282315406946?text=Halo%20Yan's%20Florist%2C%20saya%20tertarik%20dengan%20produk%20ini"
+                   class="btn-wa"
+                   id="modalWa"
+                   target="_blank">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
                 </a>
             </div>
         </div>
@@ -680,6 +860,29 @@
             if (e.key === 'Escape') closeModal();
         });
     </script>
-
+<!-- ========== FOOTER / COPYRIGHT ========== -->
+<footer style="
+    margin-top: 40px;
+    padding: 25px 20px;
+    background: var(--merah-utama);
+    color: white;
+    text-align: center;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    box-shadow: 0 -4px 16px rgba(178, 34, 34, 0.15);
+">
+    <p style="margin: 0; opacity: 0.9;">
+        &copy; 2026 
+        <a href="https://www.tokobungagarut-yansflorist.com/" 
+           target="_blank" 
+           style="color: #ffd9d9; font-weight: 700; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.3s;">
+            Toko Bunga Garut - Yan's Florist
+        </a>
+        . All rights reserved.
+    </p>
+    <p style="margin: 6px 0 0; font-size: 0.8rem; opacity: 0.7;">
+        🌸 Melayani karangan bunga untuk Garut & sekitarnya.
+    </p>
+</footer>
 </body>
 </html>
